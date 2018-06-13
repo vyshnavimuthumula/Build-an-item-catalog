@@ -1,0 +1,20 @@
+<div class="row top-product">
+	<center>
+		<div >
+			<a href="{{url_for('showCompanies')}}" >
+		    <h1>Show All Companies</h1></a>
+		</div>
+	</center>
+	</div>
+	<div align="right">
+			  {% if 'username' not in session %}
+			  <form action="{{ url_for('showlogin')}}" method = 'post'>
+				  <input type='submit', value='login'>
+				</form>					
+					{% else %}
+					<form action="{{ url_for('logout')}}" method='post'>
+					  <input type='submit', value='logout'>
+				    </form>
+					{% endif %}
+	</div>
+</div>
